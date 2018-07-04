@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/zpcmn.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">zpcmn.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="zpcmn_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="zpcmn_8f90.html#a8e53cb28d6b97d8a476ef72f6da13770">zpcmn</a></div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="zpcmn_8f90.html#a8e53cb28d6b97d8a476ef72f6da13770">    2</a></span>&#160;  <span class="keywordtype">Implicit Double Precision</span> (a-h, o-z)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  parameter(maxptn=400001)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /para3/nsevt, nevnt, nsbrun, ievt, isbrun</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">Do</span> i = 1, nevnt</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;     ievt = i</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;     <span class="keyword">Call </span><a class="code" href="inievt_8f90.html#a10f76393d43ebe5bb556281a70243ce2">inievt</a></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;     <span class="keywordflow">Do</span> j = 1, nsbrun</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        isbrun = j</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">Call </span><a class="code" href="inirun_8f90.html#a11a85c70de57335cf3725d8b50abf692">inirun</a></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;3000    <span class="keywordflow">Continue</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">Call </span><a class="code" href="zpcrun_8f90.html#a6db1195600e087fc4a81495f3d7ed045">zpcrun</a>(*4000)</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">Call </span><a class="code" href="zpca1_8f90.html#a08b079fdaae5d2ad9c8113386a744b39">zpca1</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">Goto</span> 3000</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;4000    <span class="keywordflow">Continue</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">Call </span><a class="code" href="zpca2_8f90.html#af76c51090161b44e8a228b1e15461200">zpca2</a></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordflow">     End Do</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordflow">  End Do</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">Call </span><a class="code" href="zpcou_8f90.html#a54f3ead25f485e665e62dadcd309550f">zpcou</a></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">Call </span><a class="code" href="zpstrg_8f90.html#a74d8f906cf67efa3e0dce2e56f7fe1c6">zpstrg</a></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="zpcmn_8f90.html#a8e53cb28d6b97d8a476ef72f6da13770">zpcmn</a></div><div class="ttc" id="zpcrun_8f90_html_a6db1195600e087fc4a81495f3d7ed045"><div class="ttname"><a href="zpcrun_8f90.html#a6db1195600e087fc4a81495f3d7ed045">zpcrun</a></div><div class="ttdeci">subroutine zpcrun()</div><div class="ttdef"><b>Definition:</b> <a href="zpcrun_8f90_source.html#l00002">zpcrun.f90:2</a></div></div>
+<div class="ttc" id="zpstrg_8f90_html_a74d8f906cf67efa3e0dce2e56f7fe1c6"><div class="ttname"><a href="zpstrg_8f90.html#a74d8f906cf67efa3e0dce2e56f7fe1c6">zpstrg</a></div><div class="ttdeci">subroutine zpstrg</div><div class="ttdef"><b>Definition:</b> <a href="zpstrg_8f90_source.html#l00002">zpstrg.f90:2</a></div></div>
+<div class="ttc" id="zpca2_8f90_html_af76c51090161b44e8a228b1e15461200"><div class="ttname"><a href="zpca2_8f90.html#af76c51090161b44e8a228b1e15461200">zpca2</a></div><div class="ttdeci">subroutine zpca2</div><div class="ttdef"><b>Definition:</b> <a href="zpca2_8f90_source.html#l00002">zpca2.f90:2</a></div></div>
+<div class="ttc" id="zpcou_8f90_html_a54f3ead25f485e665e62dadcd309550f"><div class="ttname"><a href="zpcou_8f90.html#a54f3ead25f485e665e62dadcd309550f">zpcou</a></div><div class="ttdeci">subroutine zpcou</div><div class="ttdef"><b>Definition:</b> <a href="zpcou_8f90_source.html#l00002">zpcou.f90:2</a></div></div>
+<div class="ttc" id="inirun_8f90_html_a11a85c70de57335cf3725d8b50abf692"><div class="ttname"><a href="inirun_8f90.html#a11a85c70de57335cf3725d8b50abf692">inirun</a></div><div class="ttdeci">subroutine inirun</div><div class="ttdef"><b>Definition:</b> <a href="inirun_8f90_source.html#l00002">inirun.f90:2</a></div></div>
+<div class="ttc" id="zpca1_8f90_html_a08b079fdaae5d2ad9c8113386a744b39"><div class="ttname"><a href="zpca1_8f90.html#a08b079fdaae5d2ad9c8113386a744b39">zpca1</a></div><div class="ttdeci">subroutine zpca1</div><div class="ttdef"><b>Definition:</b> <a href="zpca1_8f90_source.html#l00002">zpca1.f90:2</a></div></div>
+<div class="ttc" id="zpcmn_8f90_html_a8e53cb28d6b97d8a476ef72f6da13770"><div class="ttname"><a href="zpcmn_8f90.html#a8e53cb28d6b97d8a476ef72f6da13770">zpcmn</a></div><div class="ttdeci">subroutine zpcmn</div><div class="ttdef"><b>Definition:</b> <a href="zpcmn_8f90_source.html#l00002">zpcmn.f90:2</a></div></div>
+<div class="ttc" id="inievt_8f90_html_a10f76393d43ebe5bb556281a70243ce2"><div class="ttname"><a href="inievt_8f90.html#a10f76393d43ebe5bb556281a70243ce2">inievt</a></div><div class="ttdeci">subroutine inievt</div><div class="ttdef"><b>Definition:</b> <a href="inievt_8f90_source.html#l00002">inievt.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

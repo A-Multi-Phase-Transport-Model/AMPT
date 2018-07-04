@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/zpcbdt.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">zpcbdt.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="zpcbdt_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Block Data</span> zpcbdt</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;   <span class="keywordtype">Implicit Double Precision</span> (a-h, o-z)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;   parameter(maxptn=400001)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;   parameter(maxstr=150001)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;   <span class="keyword">Common</span> /para1/mul</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;   <span class="keyword">Common</span> /para2/xmp, xmu, alpha, rscut2, cutof2</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   <span class="keyword">Common</span> /para3/nsevt, nevnt, nsbrun, ievt, isbrun</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   <span class="keyword">Common</span> /para4/iftflg, ireflg, igeflg, ibstfg</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;   <span class="keyword">Common</span> /para5/iconfg, iordsc</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   <span class="keyword">Common</span> /para6/centy</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="keyword">Common</span> /para7/ioscar, nsmbbbar, nsmmeson</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   <span class="keyword">Common</span> /prec1/gx0(maxptn), gy0(maxptn), gz0(maxptn), ft0(maxptn), px0(maxptn), py0(maxptn), pz0(maxptn), e0(maxptn), xmass0(maxptn), ityp0(maxptn)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   <span class="keyword">Common</span> /prec2/gx(maxptn), gy(maxptn), gz(maxptn), ft(maxptn), px(maxptn), py(maxptn), pz(maxptn), e(maxptn), xmass(maxptn), ityp(maxptn)</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;   <span class="keyword">Common</span> /prec3/gxs(maxptn), gys(maxptn), gzs(maxptn), fts(maxptn), pxs(maxptn), pys(maxptn), pzs(maxptn), es(maxptn), xmasss(maxptn), ityps(maxptn)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   <span class="keyword">Common</span> /prec4/vx(maxptn), vy(maxptn), vz(maxptn)</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   <span class="keyword">Common</span> /prec5/eta(maxptn), rap(maxptn), tau(maxptn)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <span class="keyword">Common</span> /prec6/etas(maxptn), raps(maxptn), taus(maxptn)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   <span class="keyword">Common</span> /aurec1/jxa, jya, jza</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   <span class="keyword">Common</span> /aurec2/dgxa(maxptn), dgya(maxptn), dgza(maxptn)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   <span class="keyword">Common</span> /ilist1/iscat, jscat, next(maxptn), last(maxptn), ictype, icsta(maxptn), nic(maxptn), icels(maxptn)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keyword">Common</span> /ilist2/icell, icel(10, 10, 10)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <span class="keyword">Common</span> /ilist3/size1, size2, size3, v1, v2, v3, <span class="keyword">size</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keyword">Common</span> /ilist4/ifmpt, ichkpt, indx(maxptn)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   <span class="keyword">Common</span> /ilist6/t, iopern, icolln</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   <span class="keyword">Common</span> /ilist7/lstrg0(maxptn), lpart0(maxptn)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   <span class="keyword">Common</span> /ilist8/lstrg1(maxptn), lpart1(maxptn)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <span class="keyword">Common</span> /rndm1/number</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">Common</span> /rndm2/iff</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keyword">Common</span> /rndm3/iseedp</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="keyword">Common</span> /ana1/ts(12)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <span class="keyword">Common</span> /ana2/det(12), dn(12), detdy(12), detdn(12), dndy(12), det1(12), dn1(12), detdy1(12), detdn1(12), dndy1(12), det2(12), dn2(12), detdy2(12), detdn2(12), dndy2(12)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="keyword">Common</span> /ana3/em(4, 4, 12)</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="keyword">Common</span> /ana4/fdetdy(24), fdndy(24), fdndpt(12)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   <span class="keywordtype">Save</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="keyword">Data</span> centy/0d0/</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   <span class="keyword">Data</span> number/0/</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="keyword">Data</span> ts/0.11d0, 0.12d0, 0.15d0, 0.2d0, 0.3d0, 0.4d0, 0.6d0, 0.8d0, 1d0, 2d0, 4d0, 6d0/</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">End Block Data</span></div></div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/hidata.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">hidata.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="hidata_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Block Data</span> hidata</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;  parameter(maxstr=150001)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keywordtype">Double Precision</span> xl(10), xu(10), acc</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /bveg1/xl, xu, acc, ndim, ncall, itmx, nprn</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keyword">Common</span> /sedvax/num1</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">Common</span> /hparnt/hipr1(100), ihpr2(50), hint1(100), ihnt2(50)</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">Common</span> /hmain1/eatt, jatt, natt, nt, np, n0, n01, n10, n11</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">Common</span> /hmain2/katt(maxstr, 4), patt(maxstr, 4)</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">Common</span> /hstrng/nfp(300, 15), pp(300, 15), nft(300, 15), pt(300, 15)</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">Common</span> /hjcrdn/yp(3, 300), yt(3, 300)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">Common</span> /hjjet1/npj(300), kfpj(300, 500), pjpx(300, 500), pjpy(300, 500), pjpz(300, 500), pjpe(300, 500), pjpm(300, 500), ntj(300), kftj(300, 500), pjtx(300, 500), pjty(300, 500), pjtz(300, 500), pjte(300, 500), pjtm(300, 500)</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">Common</span> /hjjet2/nsg, njsg(maxstr), iasg(maxstr, 3), k1sg(maxstr, 100), k2sg(maxstr, 100), pxsg(maxstr, 100), pysg(maxstr, 100), pzsg(maxstr, 100), pesg(maxstr, 100), pmsg(maxstr, 100)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">Common</span> /hijdat/hidat0(10, 10), hidat(10)</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">Common</span> /hpint/mint4, mint5, atco(200, 20), atxs(0:200)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">Data</span> num1/30123984/, xl/10*0.d0/, xu/10*1.d0/</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">Data</span> ncall/1000/, itmx/100/, acc/0.01/, nprn/0/</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">Data</span> hipr1/1.5, 0.35, 0.5, 0.9, 2.0, 0.1, 1.5, 2.0, -1.0, -2.25, 2.0, 0.5, 1.0, 2.0, 0.2, 2.0, 2.5, 0.3, 0.1, 1.4, 1.6, 1.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 57.0, 28.5, 3.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.14159, 0.0, 0.4, 0.1, 1.5, 0.1, 0.25, 0.0, 0.5, 0.0, 0.0, 50*0.0/</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">Data</span> ihpr2/1, 3, 0, 1, 1, 1, 1, 10, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 30*0/</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">Data</span> hint1/100*0/</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">Data</span> ihnt2/50*0/</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">Data</span> natt/0/, eatt/0.0/, jatt/0/, nt/0/, np/0/, n0/0/, n01/0/, n10/0/, n11/0/</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">Data</span> katt/600004*0/, patt/600004*0.0/</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">Data</span> nfp/4500*0/, pp/4500*0.0/, nft/4500*0/, pt/4500*0.0/</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">Data</span> yp/900*0.0/, yt/900*0.0/</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">Data</span> npj/300*0/, kfpj/150000*0/, pjpx/150000*0.0/, pjpy/150000*0.0/, pjpz/150000*0.0/, pjpe/150000*0.0/, pjpm/150000*0.0/</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">Data</span> ntj/300*0/, kftj/150000*0/, pjtx/150000*0.0/, pjty/150000*0.0/, pjtz/150000*0.0/, pjte/150000*0.0/, pjtm/150000*0.0/</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">Data</span> nsg/0/, njsg/150001*0/, iasg/450003*0/, k1sg/15000100*0/, k2sg/15000100*0/, pxsg/15000100*0.0/, pysg/15000100*0.0/, pzsg/15000100*0.0/, pesg/15000100*0.0/, pmsg/15000100*0.0/</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">Data</span> mint4/0/, mint5/0/, atco/4000*0.0/, atxs/201*0.0/</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">Data</span> (hidat0(1,i), i=1, 10)/0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.25, 2.5, 4.0, 4.1/</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">Data</span> (hidat0(2,i), i=1, 10)/2.0, 3.0, 5.0, 6.0, 7.0, 8.0, 8.0, 10.0, 10.0, 10.0/</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">Data</span> (hidat0(3,i), i=1, 10)/1.0, 0.8, 0.8, 0.7, 0.45, 0.215, 0.21, 0.19, 0.19, 0.19/</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">Data</span> (hidat0(4,i), i=1, 10)/0.35, 0.35, 0.3, 0.3, 0.3, 0.3, 0.5, 0.6, 0.6, 0.6/</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">Data</span> (hidat0(5,i), i=1, 10)/23.8, 24.0, 26.0, 26.2, 27.0, 28.5, 28.5, 28.5, 28.5, 28.5/</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">Data</span> ((hidat0(j,i),i=1,10), j=6, 9)/40*0.0/</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">Data</span> (hidat0(10,i), i=1, 10)/5.0, 20.0, 53.0, 62.0, 100.0, 200.0, 546.0, 900.0, 1800.0, 4000.0/</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">Data</span> hidat/10*0.0/</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">End Block Data </span>hidata</div></div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

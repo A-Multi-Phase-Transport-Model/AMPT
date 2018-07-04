@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/x4pi.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">x4pi.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="x4pi_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Real </span><span class="keyword">Function </span><a class="code" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a>(srt)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">    2</a></span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  akp = 0.498</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  ak0 = 0.498</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  ana = 0.94</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  ada = 1.232</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  al = 1.1157</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  as = 1.1197</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  pmass = 0.9383</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  es = srt</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">If</span> (es&lt;=4) <span class="keywordflow">Then</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;     <a class="code" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a> = 0.</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">Else</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;     xpp2pi = 4.*<a class="code" href="x2pi_8f90.html#ac39b07cf5487782a4d75f522660e2d07">x2pi</a>(es)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;     xpp3pi = 3.*(<a class="code" href="x3pi_8f90.html#a562b20d8442a8af624be2181f0db3dce">x3pi</a>(es)+<a class="code" href="x33pi_8f90.html#a7633f265079077bb21eb674d0dda1836">x33pi</a>(es))</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;     pps1 = <a class="code" href="sigma_8f90.html#a100a3859006a443e954400ad0b7f7f71">sigma</a>(es, 1, 1, 0) + 0.5*<a class="code" href="sigma_8f90.html#a100a3859006a443e954400ad0b7f7f71">sigma</a>(es, 1, 1, 1)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;     pps2 = 1.5*<a class="code" href="sigma_8f90.html#a100a3859006a443e954400ad0b7f7f71">sigma</a>(es, 1, 1, 1)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;     ppsngl = pps1 + pps2 + <a class="code" href="s1535_8f90.html#a4c181ef0c1bf3b88da746c7d6ad0c56d">s1535</a>(es)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;     xk1 = 0</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;     xk2 = 0</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;     xk3 = 0</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;     xk4 = 0</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;     t1nlk = ana + al + akp</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;     t2nlk = ana + al - akp</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;     <span class="keywordflow">If</span> (es&lt;=t1nlk) <span class="keywordflow">Goto</span> 333</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;     pmnlk2 = (es**2-t1nlk**2)*(es**2-t2nlk**2)/(4.*es**2)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;     pmnlk = sqrt(pmnlk2)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;     xk1 = <a class="code" href="pplpk_8f90.html#a9eabd1a7deb4249e01dd67ba0256c392">pplpk</a>(es)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;     t1dlk = ada + al + akp</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;     t2dlk = ada + al - akp</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;     <span class="keywordflow">If</span> (es&lt;=t1dlk) <span class="keywordflow">Goto</span> 333</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;     pmdlk2 = (es**2-t1dlk**2)*(es**2-t2dlk**2)/(4.*es**2)</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;     pmdlk = sqrt(pmdlk2)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;     xk3 = <a class="code" href="pplpk_8f90.html#a9eabd1a7deb4249e01dd67ba0256c392">pplpk</a>(es)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;     t1nsk = ana + as + akp</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     t2nsk = ana + as - akp</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;     <span class="keywordflow">If</span> (es&lt;=t1nsk) <span class="keywordflow">Goto</span> 333</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;     pmnsk2 = (es**2-t1nsk**2)*(es**2-t2nsk**2)/(4.*es**2)</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;     pmnsk = sqrt(pmnsk2)</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;     xk2 = <a class="code" href="ppk1_8f90.html#afc6f58e4cb32502de4d9ed7b08dc6f31">ppk1</a>(es) + <a class="code" href="ppk0_8f90.html#aeedee056302a13fbc5ffb257e31398c5">ppk0</a>(es)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     t1dsk = ada + as + akp</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;     t2dsk = ada + as - akp</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;     <span class="keywordflow">If</span> (es&lt;=t1dsk) <span class="keywordflow">Goto</span> 333</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     pmdsk2 = (es**2-t1dsk**2)*(es**2-t2dsk**2)/(4.*es**2)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;     pmdsk = sqrt(pmdsk2)</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     xk4 = <a class="code" href="ppk1_8f90.html#afc6f58e4cb32502de4d9ed7b08dc6f31">ppk1</a>(es) + <a class="code" href="ppk0_8f90.html#aeedee056302a13fbc5ffb257e31398c5">ppk0</a>(es)</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;333  xkaon = 3.*(xk1+xk2+xk3+xk4)</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     <a class="code" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a> = <a class="code" href="pp1_8f90.html#ae7bbc15a7f50d997dc6e9e91aaddda56">pp1</a>(es) - ppsngl - xpp2pi - xpp3pi - xkaon</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     <span class="keywordflow">If</span> (<a class="code" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a>&lt;=0) <a class="code" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a> = 1.e-06</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">End Function </span><a class="code" href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a></div><div class="ttc" id="ppk1_8f90_html_afc6f58e4cb32502de4d9ed7b08dc6f31"><div class="ttname"><a href="ppk1_8f90.html#afc6f58e4cb32502de4d9ed7b08dc6f31">ppk1</a></div><div class="ttdeci">real function ppk1(srt)</div><div class="ttdef"><b>Definition:</b> <a href="ppk1_8f90_source.html#l00002">ppk1.f90:2</a></div></div>
+<div class="ttc" id="x4pi_8f90_html_ac5cb0e5b402316190f4a7f3487df0e89"><div class="ttname"><a href="x4pi_8f90.html#ac5cb0e5b402316190f4a7f3487df0e89">x4pi</a></div><div class="ttdeci">real function x4pi(srt)</div><div class="ttdef"><b>Definition:</b> <a href="x4pi_8f90_source.html#l00002">x4pi.f90:2</a></div></div>
+<div class="ttc" id="x33pi_8f90_html_a7633f265079077bb21eb674d0dda1836"><div class="ttname"><a href="x33pi_8f90.html#a7633f265079077bb21eb674d0dda1836">x33pi</a></div><div class="ttdeci">real function x33pi(srt)</div><div class="ttdef"><b>Definition:</b> <a href="x33pi_8f90_source.html#l00002">x33pi.f90:2</a></div></div>
+<div class="ttc" id="x2pi_8f90_html_ac39b07cf5487782a4d75f522660e2d07"><div class="ttname"><a href="x2pi_8f90.html#ac39b07cf5487782a4d75f522660e2d07">x2pi</a></div><div class="ttdeci">real function x2pi(srt)</div><div class="ttdef"><b>Definition:</b> <a href="x2pi_8f90_source.html#l00002">x2pi.f90:2</a></div></div>
+<div class="ttc" id="ppk0_8f90_html_aeedee056302a13fbc5ffb257e31398c5"><div class="ttname"><a href="ppk0_8f90.html#aeedee056302a13fbc5ffb257e31398c5">ppk0</a></div><div class="ttdeci">real function ppk0(srt)</div><div class="ttdef"><b>Definition:</b> <a href="ppk0_8f90_source.html#l00002">ppk0.f90:2</a></div></div>
+<div class="ttc" id="pplpk_8f90_html_a9eabd1a7deb4249e01dd67ba0256c392"><div class="ttname"><a href="pplpk_8f90.html#a9eabd1a7deb4249e01dd67ba0256c392">pplpk</a></div><div class="ttdeci">real function pplpk(srt)</div><div class="ttdef"><b>Definition:</b> <a href="pplpk_8f90_source.html#l00002">pplpk.f90:2</a></div></div>
+<div class="ttc" id="pp1_8f90_html_ae7bbc15a7f50d997dc6e9e91aaddda56"><div class="ttname"><a href="pp1_8f90.html#ae7bbc15a7f50d997dc6e9e91aaddda56">pp1</a></div><div class="ttdeci">real function pp1(srt)</div><div class="ttdef"><b>Definition:</b> <a href="pp1_8f90_source.html#l00002">pp1.f90:2</a></div></div>
+<div class="ttc" id="sigma_8f90_html_a100a3859006a443e954400ad0b7f7f71"><div class="ttname"><a href="sigma_8f90.html#a100a3859006a443e954400ad0b7f7f71">sigma</a></div><div class="ttdeci">real function sigma(srt, id, ioi, iof)</div><div class="ttdef"><b>Definition:</b> <a href="sigma_8f90_source.html#l00002">sigma.f90:2</a></div></div>
+<div class="ttc" id="x3pi_8f90_html_a562b20d8442a8af624be2181f0db3dce"><div class="ttname"><a href="x3pi_8f90.html#a562b20d8442a8af624be2181f0db3dce">x3pi</a></div><div class="ttdeci">real function x3pi(srt)</div><div class="ttdef"><b>Definition:</b> <a href="x3pi_8f90_source.html#l00002">x3pi.f90:2</a></div></div>
+<div class="ttc" id="s1535_8f90_html_a4c181ef0c1bf3b88da746c7d6ad0c56d"><div class="ttname"><a href="s1535_8f90.html#a4c181ef0c1bf3b88da746c7d6ad0c56d">s1535</a></div><div class="ttdeci">real function s1535(srt)</div><div class="ttdef"><b>Definition:</b> <a href="s1535_8f90_source.html#l00002">s1535.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

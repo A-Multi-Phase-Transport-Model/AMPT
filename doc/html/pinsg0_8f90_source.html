@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/pinsg0.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pinsg0.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pinsg0_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Real </span><span class="keyword">Function </span><a class="code" href="pinsg0_8f90.html#ae708e4b42dc9490f4cc669004e53e581">pinsg0</a>(srt)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="pinsg0_8f90.html#ae708e4b42dc9490f4cc669004e53e581">    2</a></span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  srt0 = 0.938 + 2.*0.498</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keywordflow">If</span> (srt&lt;srt0) <span class="keywordflow">Then</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="pinsg0_8f90.html#ae708e4b42dc9490f4cc669004e53e581">pinsg0</a> = 0.0</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">Return</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  ratio = srt0**2/srt**2</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="pinsg0_8f90.html#ae708e4b42dc9490f4cc669004e53e581">pinsg0</a> = 1.121*(1.-ratio)**1.86*ratio**2</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">End Function </span><a class="code" href="pinsg0_8f90.html#ae708e4b42dc9490f4cc669004e53e581">pinsg0</a></div><div class="ttc" id="pinsg0_8f90_html_ae708e4b42dc9490f4cc669004e53e581"><div class="ttname"><a href="pinsg0_8f90.html#ae708e4b42dc9490f4cc669004e53e581">pinsg0</a></div><div class="ttdeci">real function pinsg0(srt)</div><div class="ttdef"><b>Definition:</b> <a href="pinsg0_8f90_source.html#l00002">pinsg0.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

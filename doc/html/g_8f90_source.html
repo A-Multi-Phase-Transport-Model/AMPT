@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/g.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">g.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="g_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Function </span><a class="code" href="g_8f90.html#ae6f69233cd20fb9f18eccb21a11b604f">g</a>(y1, y2, pt2)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="g_8f90.html#ae6f69233cd20fb9f18eccb21a11b604f">    2</a></span>&#160;  <span class="keywordtype">Implicit Double Precision</span> (a-h, o-z)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keywordtype">Real</span> hipr1(100), hint1(100)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /hparnt/hipr1, ihpr2(50), hint1, ihnt2(50)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  dimension f(2, 7)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  xt = 2.d0*dsqrt(pt2)/dble(hint1(1))</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  x1 = 0.5d0*xt*(dexp(y1)+dexp(y2))</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  x2 = 0.5d0*xt*(dexp(-y1)+dexp(-y2))</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  z = dsqrt(1.d0-xt**2/x1/x2)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  ss = x1*x2*dble(hint1(1))**2</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  t = -(1.d0-z)/2.d0</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  u = -(1.d0+z)/2.d0</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  af = 3.d0</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  dlam = dble(hipr1(15))</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  aph = 12.d0*3.1415926d0/(33.d0-2.d0*af)/dlog(pt2/dlam**2)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">Call </span><a class="code" href="parton_8f90.html#a3b6487bad48aa8ef534f4d1b31eff181">parton</a>(f, x1, x2, pt2)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  g11 = ((f(1,1)+f(1,2))*(f(2,3)+f(2,4)+f(2,5)+f(2,6))+(f(1,3)+f(1,4))*(f(2,5)+f(2,6)))*<a class="code" href="subcr1_8f90.html#a081fb9e78f91fba31eb7d6fffc850678">subcr1</a>(t, u)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  g12 = ((f(2,1)+f(2,2))*(f(1,3)+f(1,4)+f(1,5)+f(1,6))+(f(2,3)+f(2,4))*(f(1,5)+f(1,6)))*<a class="code" href="subcr1_8f90.html#a081fb9e78f91fba31eb7d6fffc850678">subcr1</a>(u, t)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  g13 = (f(1,1)*f(2,1)+f(1,2)*f(2,2)+f(1,3)*f(2,3)+f(1,4)*f(2,4)+f(1,5)*f(2,5)+f(1,6)*f(2,6))*(<a class="code" href="subcr1_8f90.html#a081fb9e78f91fba31eb7d6fffc850678">subcr1</a>(u,t)+<a class="code" href="subcr1_8f90.html#a081fb9e78f91fba31eb7d6fffc850678">subcr1</a>(t,u)-8.d0/t/u/27.d0)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  g2 = (af-1)*(f(1,1)*f(2,2)+f(2,1)*f(1,2)+f(1,3)*f(2,4)+f(2,3)*f(1,4)+f(1,5)*f(2,6)+f(2,5)*f(1,6))*<a class="code" href="subcr2_8f90.html#aa1de559e81cd11f08631836ea3c42696">subcr2</a>(t, u)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  g31 = (f(1,1)*f(2,2)+f(1,3)*f(2,4)+f(1,5)*f(2,6))*<a class="code" href="subcr3_8f90.html#a552129af5db338a1118e9d50e611cd46">subcr3</a>(t, u)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  g32 = (f(2,1)*f(1,2)+f(2,3)*f(1,4)+f(2,5)*f(1,6))*<a class="code" href="subcr3_8f90.html#a552129af5db338a1118e9d50e611cd46">subcr3</a>(u, t)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  g4 = (f(1,1)*f(2,2)+f(2,1)*f(1,2)+f(1,3)*f(2,4)+f(2,3)*f(1,4)+f(1,5)*f(2,6)+f(2,5)*f(1,6))*<a class="code" href="subcr4_8f90.html#a95909888f6128d89029b7cb03423d1b0">subcr4</a>(t, u)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  g5 = af*f(1, 7)*f(2, 7)*<a class="code" href="subcr5_8f90.html#aadca1379d33ff6370c301a19b87caf47">subcr5</a>(t, u)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  g61 = f(1, 7)*(f(2,1)+f(2,2)+f(2,3)+f(2,4)+f(2,5)+f(2,6))*<a class="code" href="subcr6_8f90.html#a631eff8db3463ca6e59b030bee1913b7">subcr6</a>(t, u)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  g62 = f(2, 7)*(f(1,1)+f(1,2)+f(1,3)+f(1,4)+f(1,5)+f(1,6))*<a class="code" href="subcr6_8f90.html#a631eff8db3463ca6e59b030bee1913b7">subcr6</a>(u, t)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  g7 = f(1, 7)*f(2, 7)*<a class="code" href="subcr7_8f90.html#aa0e46d4682f63e2e38407c305e255af4">subcr7</a>(t, u)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="g_8f90.html#ae6f69233cd20fb9f18eccb21a11b604f">g</a> = (g11+g12+g13+g2+g31+g32+g4+g5+g61+g62+g7)*dble(hipr1(17))*3.14159d0*aph**2/ss**2</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">End Function </span><a class="code" href="g_8f90.html#ae6f69233cd20fb9f18eccb21a11b604f">g</a></div><div class="ttc" id="parton_8f90_html_a3b6487bad48aa8ef534f4d1b31eff181"><div class="ttname"><a href="parton_8f90.html#a3b6487bad48aa8ef534f4d1b31eff181">parton</a></div><div class="ttdeci">subroutine parton(f, x1, x2, qq)</div><div class="ttdef"><b>Definition:</b> <a href="parton_8f90_source.html#l00002">parton.f90:2</a></div></div>
+<div class="ttc" id="subcr1_8f90_html_a081fb9e78f91fba31eb7d6fffc850678"><div class="ttname"><a href="subcr1_8f90.html#a081fb9e78f91fba31eb7d6fffc850678">subcr1</a></div><div class="ttdeci">function subcr1(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr1_8f90_source.html#l00002">subcr1.f90:2</a></div></div>
+<div class="ttc" id="subcr5_8f90_html_aadca1379d33ff6370c301a19b87caf47"><div class="ttname"><a href="subcr5_8f90.html#aadca1379d33ff6370c301a19b87caf47">subcr5</a></div><div class="ttdeci">function subcr5(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr5_8f90_source.html#l00002">subcr5.f90:2</a></div></div>
+<div class="ttc" id="subcr2_8f90_html_aa1de559e81cd11f08631836ea3c42696"><div class="ttname"><a href="subcr2_8f90.html#aa1de559e81cd11f08631836ea3c42696">subcr2</a></div><div class="ttdeci">function subcr2(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr2_8f90_source.html#l00002">subcr2.f90:2</a></div></div>
+<div class="ttc" id="subcr3_8f90_html_a552129af5db338a1118e9d50e611cd46"><div class="ttname"><a href="subcr3_8f90.html#a552129af5db338a1118e9d50e611cd46">subcr3</a></div><div class="ttdeci">function subcr3(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr3_8f90_source.html#l00002">subcr3.f90:2</a></div></div>
+<div class="ttc" id="g_8f90_html_ae6f69233cd20fb9f18eccb21a11b604f"><div class="ttname"><a href="g_8f90.html#ae6f69233cd20fb9f18eccb21a11b604f">g</a></div><div class="ttdeci">function g(y1, y2, pt2)</div><div class="ttdef"><b>Definition:</b> <a href="g_8f90_source.html#l00002">g.f90:2</a></div></div>
+<div class="ttc" id="subcr7_8f90_html_aa0e46d4682f63e2e38407c305e255af4"><div class="ttname"><a href="subcr7_8f90.html#aa0e46d4682f63e2e38407c305e255af4">subcr7</a></div><div class="ttdeci">function subcr7(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr7_8f90_source.html#l00002">subcr7.f90:2</a></div></div>
+<div class="ttc" id="subcr4_8f90_html_a95909888f6128d89029b7cb03423d1b0"><div class="ttname"><a href="subcr4_8f90.html#a95909888f6128d89029b7cb03423d1b0">subcr4</a></div><div class="ttdeci">function subcr4(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr4_8f90_source.html#l00002">subcr4.f90:2</a></div></div>
+<div class="ttc" id="subcr6_8f90_html_a631eff8db3463ca6e59b030bee1913b7"><div class="ttname"><a href="subcr6_8f90.html#a631eff8db3463ca6e59b030bee1913b7">subcr6</a></div><div class="ttdeci">function subcr6(t, u)</div><div class="ttdef"><b>Definition:</b> <a href="subcr6_8f90_source.html#l00002">subcr6.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

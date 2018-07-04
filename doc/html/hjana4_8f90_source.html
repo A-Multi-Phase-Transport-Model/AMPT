@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/hjana4.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">hjana4.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="hjana4_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="hjana4_8f90.html#a1888c234b47af093e84064500b248ac2">hjana4</a></div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="hjana4_8f90.html#a1888c234b47af093e84064500b248ac2">    2</a></span>&#160;  parameter(maxstr=150001, maxr=1)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  parameter(ymin=-1.0, ymax=1.0)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  parameter(dmt=0.05, dy=0.2)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  dimension dndyh4(50), dmyh4(50), deyh4(50)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">Common</span> /run/num</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">Common</span> /arerc1/multi1(maxr)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">Common</span> /arprc1/ityp1(maxstr, maxr), gx1(maxstr, maxr), gy1(maxstr, maxr), gz1(maxstr, maxr), ft1(maxstr, maxr), px1(maxstr, maxr), py1(maxstr, maxr), pz1(maxstr, maxr), ee1(maxstr, maxr), xm1(maxstr, maxr)</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">Common</span> /arout/iout</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">Common</span> /fflow/v2f, etf, xmultf, v2fpi, xmulpi</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">Data</span> iw/0/</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  iw = iw + 1</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">Do</span> j = 1, num</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">Do</span> i = 1, multi1(j)</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      ityp = ityp1(i, j)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <span class="keywordflow">If</span> (ityp&gt;-100 .And. ityp&lt;100) <span class="keywordflow">Goto</span> 200</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      px = px1(i, j)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      py = py1(i, j)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      pz = pz1(i, j)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      ee = ee1(i, j)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      xm = xm1(i, j)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      xmt = sqrt(px**2+py**2+xm**2)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      dxmt = xmt - xm</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">If</span> (xmt&gt;0.) <span class="keywordflow">Then</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        y = <a class="code" href="asinh_8f90.html#a931bfc127697c783bc674f700e1e7a87">asinh</a>(pz/xmt)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordflow">Else</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        print *, <span class="stringliteral">&#39; IN HJANA4 mt=0&#39;</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        y = 1000000.0*sign(1., pz)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordflow">      End If</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      iy = 1 + int(y/dy)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordflow">If</span> (iy&lt;1 .Or. iy&gt;50) <span class="keywordflow">Goto</span> 100</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      dndyh4(iy) = dndyh4(iy) + 1.0</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      deyh4(iy) = deyh4(iy) + xmt</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      100 <span class="keywordflow">Continue</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">If</span> (y&lt;ymin .Or. y&gt;=ymax) <span class="keywordflow">Goto</span> 200</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      imt = 1 + int(dxmt/dmt)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">If</span> (imt&gt;50) <span class="keywordflow">Goto</span> 200</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      dmyh4(imt) = dmyh4(imt) + 1.0/xmt</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      200 <span class="keywordflow">Continue</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordflow">    End Do</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordflow">  End Do</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="hjana4_8f90.html#a1888c234b47af093e84064500b248ac2">hjana4</a></div><div class="ttc" id="asinh_8f90_html_a931bfc127697c783bc674f700e1e7a87"><div class="ttname"><a href="asinh_8f90.html#a931bfc127697c783bc674f700e1e7a87">asinh</a></div><div class="ttdeci">function asinh(x)</div><div class="ttdef"><b>Definition:</b> <a href="asinh_8f90_source.html#l00002">asinh.f90:2</a></div></div>
+<div class="ttc" id="hjana4_8f90_html_a1888c234b47af093e84064500b248ac2"><div class="ttname"><a href="hjana4_8f90.html#a1888c234b47af093e84064500b248ac2">hjana4</a></div><div class="ttdeci">subroutine hjana4</div><div class="ttdef"><b>Definition:</b> <a href="hjana4_8f90_source.html#l00002">hjana4.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

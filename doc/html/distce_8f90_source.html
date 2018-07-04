@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/distce.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">distce.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="distce_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="distce_8f90.html#aae347414d1bc458cf6600b176cfdc7ad">distce</a>(i1, i2, deltar, ds, dt, ec, srt, ic, px1cm, py1cm, pz1cm)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="distce_8f90.html#aae347414d1bc458cf6600b176cfdc7ad">    2</a></span>&#160;  parameter(maxstr=150001)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keyword">Common</span> /aa/r(3, maxstr)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /bb/p(3, maxstr)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keyword">Common</span> /cc/e(maxstr)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">Common</span> /bg/betax, betay, betaz, gamma</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">Common</span> /ee/id(maxstr), lb(maxstr)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">Common</span> /leadng/lb1, px1, py1, pz1, em1, e1, xfnl, yfnl, zfnl, tfnl, px1n, py1n, pz1n, dp1n</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">Common</span> /dpi/em2, lb2</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  ic = 0</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  x1 = r(1, i1)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  y1 = r(2, i1)</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  z1 = r(3, i1)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  px1 = p(1, i1)</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  py1 = p(2, i1)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  pz1 = p(3, i1)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  x2 = r(1, i2)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  y2 = r(2, i2)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  z2 = r(3, i2)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  px2 = p(1, i2)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  py2 = p(2, i2)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  pz2 = p(3, i2)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  em1 = e(i1)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  em2 = e(i2)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  e1 = sqrt(em1**2+px1**2+py1**2+pz1**2)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  rsqare = (x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">If</span> (rsqare&gt;deltar**2) <span class="keywordflow">Goto</span> 400</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  e2 = sqrt(em2**2+px2**2+py2**2+pz2**2)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  s = srt*srt</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">If</span> (s&lt;ec) <span class="keywordflow">Goto</span> 400</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  p1beta = px1*betax + py1*betay + pz1*betaz</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  transf = gamma*(gamma*p1beta/(gamma+1)-e1)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  prcm = sqrt(px1cm**2+py1cm**2+pz1cm**2)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">If</span> (prcm&lt;=0.00001) <span class="keywordflow">Goto</span> 400</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  drbeta = betax*(x1-x2) + betay*(y1-y2) + betaz*(z1-z2)</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  transf = gamma*gamma*drbeta/(gamma+1)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  dxcm = betax*transf + x1 - x2</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  dycm = betay*transf + y1 - y2</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  dzcm = betaz*transf + z1 - z2</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  drcm = sqrt(dxcm**2+dycm**2+dzcm**2)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  dzz = (px1cm*dxcm+py1cm*dycm+pz1cm*dzcm)/prcm</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">If</span> ((drcm**2-dzz**2)&lt;=0.) <span class="keywordflow">Then</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     bbb = 0.</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">Else</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     bbb = sqrt(drcm**2-dzz**2)</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">If</span> (bbb&gt;ds) <span class="keywordflow">Goto</span> 400</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  relvel = prcm*(1.0/e1+1.0/e2)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  ddd = relvel*dt*0.5</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">If</span> (abs(ddd)&lt;abs(dzz)) <span class="keywordflow">Goto</span> 400</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ic = 1</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">Goto</span> 500</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;400 ic = -1</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;500 <span class="keywordflow">Continue</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="distce_8f90.html#aae347414d1bc458cf6600b176cfdc7ad">distce</a></div><div class="ttc" id="distce_8f90_html_aae347414d1bc458cf6600b176cfdc7ad"><div class="ttname"><a href="distce_8f90.html#aae347414d1bc458cf6600b176cfdc7ad">distce</a></div><div class="ttdeci">subroutine distce(i1, i2, deltar, ds, dt, ec, srt, ic, px1cm, py1cm, pz1cm)</div><div class="ttdef"><b>Definition:</b> <a href="distce_8f90_source.html#l00002">distce.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

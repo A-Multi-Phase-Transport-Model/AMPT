@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/dmelangle.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dmelangle.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dmelangle_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="dmelangle_8f90.html#aa5c23ea4ebf6368de7fef9406f31e7f3">dmelangle</a>(pxn, pyn, pzn, pfinal)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="dmelangle_8f90.html#aa5c23ea4ebf6368de7fef9406f31e7f3">    2</a></span>&#160;  parameter(pi=3.1415926)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keyword">Common</span> /rndf77/nseed</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  c1 = 1.0 - 2.0*<a class="code" href="ranart_8f90.html#a9ce7bb75b7ed8115c4733dd3d60caf8c">ranart</a>(nseed)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  t1 = 2.0*pi*<a class="code" href="ranart_8f90.html#a9ce7bb75b7ed8115c4733dd3d60caf8c">ranart</a>(nseed)</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  s1 = sqrt(1.0-c1**2)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  ct1 = cos(t1)</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  st1 = sin(t1)</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  pzn = pfinal*c1</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  pxn = pfinal*s1*ct1</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  pyn = pfinal*s1*st1</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="dmelangle_8f90.html#aa5c23ea4ebf6368de7fef9406f31e7f3">dmelangle</a></div><div class="ttc" id="ranart_8f90_html_a9ce7bb75b7ed8115c4733dd3d60caf8c"><div class="ttname"><a href="ranart_8f90.html#a9ce7bb75b7ed8115c4733dd3d60caf8c">ranart</a></div><div class="ttdeci">function ranart(nseed)</div><div class="ttdef"><b>Definition:</b> <a href="ranart_8f90_source.html#l00002">ranart.f90:2</a></div></div>
+<div class="ttc" id="dmelangle_8f90_html_aa5c23ea4ebf6368de7fef9406f31e7f3"><div class="ttname"><a href="dmelangle_8f90.html#aa5c23ea4ebf6368de7fef9406f31e7f3">dmelangle</a></div><div class="ttdeci">subroutine dmelangle(pxn, pyn, pzn, pfinal)</div><div class="ttdef"><b>Definition:</b> <a href="dmelangle_8f90_source.html#l00002">dmelangle.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/isco.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">isco.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="isco_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="isco_8f90.html#a3b77823a20219107cd4dbe957d70fd6c">isco</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="isco_8f90.html#a3b77823a20219107cd4dbe957d70fd6c">    2</a></span>&#160;  <span class="keywordtype">Implicit Double Precision</span> (a-h, o-z)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keyword">Common</span> /para5/iconfg, iordsc</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordtype">Logical</span> allok</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  iorder = iordsc/10</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">If</span> (iconfg==1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;     <span class="keywordflow">If</span> (iorder==1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco1_8f90.html#ae805535030ce5e9144a20555e68aea39">isco1</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==2) <span class="keywordflow">Then</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco2_8f90.html#a9ac5e001d213ecfc71a7b6d8a3b8a69d">isco2</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==3) <span class="keywordflow">Then</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco3_8f90.html#a0eb776cad21368d6bbef43aa0e63baae">isco3</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordflow">     End If</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iconfg==2 .Or. iconfg==4) <span class="keywordflow">Then</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;     <span class="keywordflow">If</span> (iorder==1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco4_8f90.html#a70a766e747f84724c99301dba9dcbae8">isco4</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==2) <span class="keywordflow">Then</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco5_8f90.html#adb61e2b9a02855f341b1ff319cf61aa8">isco5</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==3) <span class="keywordflow">Then</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco6_8f90.html#abc784a1386116be238d2bfcca22d732a">isco6</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordflow">     End If</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iconfg==3) <span class="keywordflow">Then</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;     <span class="keywordflow">If</span> (iorder==1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco7_8f90.html#a59d430ea54e1fadc81597a8b8b37d87a">isco7</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==2) <span class="keywordflow">Then</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco8_8f90.html#a9450ed474edefee41ccc0db34a32174e">isco8</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==3) <span class="keywordflow">Then</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco9_8f90.html#a6cbe5025ad81dba5f04b0448390fb63c">isco9</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordflow">     End If</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iconfg==5) <span class="keywordflow">Then</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;     <span class="keywordflow">If</span> (iorder==1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco10_8f90.html#ab2c4215b937ff36383b5c718de25a706">isco10</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==2) <span class="keywordflow">Then</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco11_8f90.html#a5cbe0a24fa3ffefc5968f91bbc94b877">isco11</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (iorder==3) <span class="keywordflow">Then</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">Call </span><a class="code" href="isco12_8f90.html#a5daac16dffd42cc38f510f19f57fd743">isco12</a>(i, j, allok, tm, t1, t2)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordflow">     End If</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="isco_8f90.html#a3b77823a20219107cd4dbe957d70fd6c">isco</a></div><div class="ttc" id="isco6_8f90_html_abc784a1386116be238d2bfcca22d732a"><div class="ttname"><a href="isco6_8f90.html#abc784a1386116be238d2bfcca22d732a">isco6</a></div><div class="ttdeci">subroutine isco6(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco6_8f90_source.html#l00002">isco6.f90:2</a></div></div>
+<div class="ttc" id="isco4_8f90_html_a70a766e747f84724c99301dba9dcbae8"><div class="ttname"><a href="isco4_8f90.html#a70a766e747f84724c99301dba9dcbae8">isco4</a></div><div class="ttdeci">subroutine isco4(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco4_8f90_source.html#l00002">isco4.f90:2</a></div></div>
+<div class="ttc" id="isco9_8f90_html_a6cbe5025ad81dba5f04b0448390fb63c"><div class="ttname"><a href="isco9_8f90.html#a6cbe5025ad81dba5f04b0448390fb63c">isco9</a></div><div class="ttdeci">subroutine isco9(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco9_8f90_source.html#l00002">isco9.f90:2</a></div></div>
+<div class="ttc" id="isco12_8f90_html_a5daac16dffd42cc38f510f19f57fd743"><div class="ttname"><a href="isco12_8f90.html#a5daac16dffd42cc38f510f19f57fd743">isco12</a></div><div class="ttdeci">subroutine isco12(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco12_8f90_source.html#l00002">isco12.f90:2</a></div></div>
+<div class="ttc" id="isco5_8f90_html_adb61e2b9a02855f341b1ff319cf61aa8"><div class="ttname"><a href="isco5_8f90.html#adb61e2b9a02855f341b1ff319cf61aa8">isco5</a></div><div class="ttdeci">subroutine isco5(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco5_8f90_source.html#l00002">isco5.f90:2</a></div></div>
+<div class="ttc" id="isco1_8f90_html_ae805535030ce5e9144a20555e68aea39"><div class="ttname"><a href="isco1_8f90.html#ae805535030ce5e9144a20555e68aea39">isco1</a></div><div class="ttdeci">subroutine isco1(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco1_8f90_source.html#l00002">isco1.f90:2</a></div></div>
+<div class="ttc" id="isco_8f90_html_a3b77823a20219107cd4dbe957d70fd6c"><div class="ttname"><a href="isco_8f90.html#a3b77823a20219107cd4dbe957d70fd6c">isco</a></div><div class="ttdeci">subroutine isco(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco_8f90_source.html#l00002">isco.f90:2</a></div></div>
+<div class="ttc" id="isco2_8f90_html_a9ac5e001d213ecfc71a7b6d8a3b8a69d"><div class="ttname"><a href="isco2_8f90.html#a9ac5e001d213ecfc71a7b6d8a3b8a69d">isco2</a></div><div class="ttdeci">subroutine isco2(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco2_8f90_source.html#l00002">isco2.f90:2</a></div></div>
+<div class="ttc" id="isco10_8f90_html_ab2c4215b937ff36383b5c718de25a706"><div class="ttname"><a href="isco10_8f90.html#ab2c4215b937ff36383b5c718de25a706">isco10</a></div><div class="ttdeci">subroutine isco10(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco10_8f90_source.html#l00002">isco10.f90:2</a></div></div>
+<div class="ttc" id="isco8_8f90_html_a9450ed474edefee41ccc0db34a32174e"><div class="ttname"><a href="isco8_8f90.html#a9450ed474edefee41ccc0db34a32174e">isco8</a></div><div class="ttdeci">subroutine isco8(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco8_8f90_source.html#l00002">isco8.f90:2</a></div></div>
+<div class="ttc" id="isco7_8f90_html_a59d430ea54e1fadc81597a8b8b37d87a"><div class="ttname"><a href="isco7_8f90.html#a59d430ea54e1fadc81597a8b8b37d87a">isco7</a></div><div class="ttdeci">subroutine isco7(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco7_8f90_source.html#l00002">isco7.f90:2</a></div></div>
+<div class="ttc" id="isco11_8f90_html_a5cbe0a24fa3ffefc5968f91bbc94b877"><div class="ttname"><a href="isco11_8f90.html#a5cbe0a24fa3ffefc5968f91bbc94b877">isco11</a></div><div class="ttdeci">subroutine isco11(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco11_8f90_source.html#l00002">isco11.f90:2</a></div></div>
+<div class="ttc" id="isco3_8f90_html_a0eb776cad21368d6bbef43aa0e63baae"><div class="ttname"><a href="isco3_8f90.html#a0eb776cad21368d6bbef43aa0e63baae">isco3</a></div><div class="ttdeci">subroutine isco3(i, j, allok, tm, t1, t2)</div><div class="ttdef"><b>Definition:</b> <a href="isco3_8f90_source.html#l00002">isco3.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

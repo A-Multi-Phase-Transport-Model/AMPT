@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/crsjet.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">crsjet.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="crsjet_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="crsjet_8f90.html#af2fc33e94c1b4d97324c05704f5e1130">crsjet</a></div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="crsjet_8f90.html#af2fc33e94c1b4d97324c05704f5e1130">    2</a></span>&#160;  <span class="keywordtype">Implicit Double Precision</span> (a-h, o-z)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keywordtype">Real</span> hipr1(100), hint1(100)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /hparnt/hipr1, ihpr2(50), hint1, ihnt2(50)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keyword">Common</span> /njet/n, ipcrs</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">Common</span> /bveg1/xl(10), xu(10), acc, ndim, ncall, itmx, nprn</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">Common</span> /bveg2/xi(50, 10), si, si2, swgt, schi, ndo, it</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">Common</span> /bveg3/f, ti, tsi</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">Common</span> /sedvax/num1</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">External</span> <a class="code" href="fjet_8f90.html#a3009cc3da417da6b30f45aa860cd53dd">fjet</a>, <a class="code" href="fjetrg_8f90.html#ad6224d883c74ca125716b789aa980f5f">fjetrg</a></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  ndim = 3</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ipcrs = 0</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjet_8f90.html#a3009cc3da417da6b30f45aa860cd53dd">fjet</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  hint1(14) = sngl(avgi)/2.5682</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">If</span> (ihpr2(6)==1 .And. ihnt2(1)&gt;1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ipcrs = 1</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjet_8f90.html#a3009cc3da417da6b30f45aa860cd53dd">fjet</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    hint1(15) = sngl(avgi)/2.5682</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">If</span> (ihpr2(6)==1 .And. ihnt2(3)&gt;1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ipcrs = 2</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjet_8f90.html#a3009cc3da417da6b30f45aa860cd53dd">fjet</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    hint1(16) = sngl(avgi)/2.5682</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">If</span> (ihpr2(6)==1 .And. ihnt2(1)&gt;1 .And. ihnt2(3)&gt;1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ipcrs = 3</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjet_8f90.html#a3009cc3da417da6b30f45aa860cd53dd">fjet</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    hint1(17) = sngl(avgi)/2.5682</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">If</span> (ihpr2(3)/=0) <span class="keywordflow">Then</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ipcrs = 0</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjetrg_8f90.html#ad6224d883c74ca125716b789aa980f5f">fjetrg</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    hint1(61) = sngl(avgi)/2.5682</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">If</span> (ihpr2(6)==1 .And. ihnt2(1)&gt;1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      ipcrs = 1</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjetrg_8f90.html#ad6224d883c74ca125716b789aa980f5f">fjetrg</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      hint1(62) = sngl(avgi)/2.5682</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordflow">    End If</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">If</span> (ihpr2(6)==1 .And. ihnt2(3)&gt;1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      ipcrs = 2</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjetrg_8f90.html#ad6224d883c74ca125716b789aa980f5f">fjetrg</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      hint1(63) = sngl(avgi)/2.5682</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordflow">    End If</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">If</span> (ihpr2(6)==1 .And. ihnt2(1)&gt;1 .And. ihnt2(3)&gt;1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      ipcrs = 3</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keyword">Call </span><a class="code" href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a>(<a class="code" href="fjetrg_8f90.html#ad6224d883c74ca125716b789aa980f5f">fjetrg</a>, avgi, sd, chi2a)</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      hint1(64) = sngl(avgi)/2.5682</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordflow">    End If</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="crsjet_8f90.html#af2fc33e94c1b4d97324c05704f5e1130">crsjet</a></div><div class="ttc" id="crsjet_8f90_html_af2fc33e94c1b4d97324c05704f5e1130"><div class="ttname"><a href="crsjet_8f90.html#af2fc33e94c1b4d97324c05704f5e1130">crsjet</a></div><div class="ttdeci">subroutine crsjet</div><div class="ttdef"><b>Definition:</b> <a href="crsjet_8f90_source.html#l00002">crsjet.f90:2</a></div></div>
+<div class="ttc" id="fjet_8f90_html_a3009cc3da417da6b30f45aa860cd53dd"><div class="ttname"><a href="fjet_8f90.html#a3009cc3da417da6b30f45aa860cd53dd">fjet</a></div><div class="ttdeci">function fjet(x, wgt)</div><div class="ttdef"><b>Definition:</b> <a href="fjet_8f90_source.html#l00002">fjet.f90:2</a></div></div>
+<div class="ttc" id="vegas_8f90_html_acf6484cb4cfb6306e26cd7d0adef51a3"><div class="ttname"><a href="vegas_8f90.html#acf6484cb4cfb6306e26cd7d0adef51a3">vegas</a></div><div class="ttdeci">subroutine vegas(fxn, avgi, sd, chi2a)</div><div class="ttdef"><b>Definition:</b> <a href="vegas_8f90_source.html#l00002">vegas.f90:2</a></div></div>
+<div class="ttc" id="fjetrg_8f90_html_ad6224d883c74ca125716b789aa980f5f"><div class="ttname"><a href="fjetrg_8f90.html#ad6224d883c74ca125716b789aa980f5f">fjetrg</a></div><div class="ttdeci">function fjetrg(x, wgt)</div><div class="ttdef"><b>Definition:</b> <a href="fjetrg_8f90_source.html#l00002">fjetrg.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

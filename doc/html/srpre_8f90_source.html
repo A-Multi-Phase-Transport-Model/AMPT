@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/srpre.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">srpre.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="srpre_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="srpre_8f90.html#aa6d8bed16c3c5865e6897a067bd6c61a">srpre</a>(lb1, lb2, srt)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="srpre_8f90.html#aa6d8bed16c3c5865e6897a067bd6c61a">    2</a></span>&#160;  parameter(pimass=0.140, etam=0.5475, arho=0.77)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keyword">Common</span> /ppb1/ene, factr2(6), fsum, ppinnb, s, wtot</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /ppmm/pprr, ppee, pppe, rpre, xopoe, rree</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordtype">Save</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  rpre = 0.</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">If</span> (lb1&gt;=25 .And. lb1&lt;=27 .And. lb2&gt;=3 .And. lb2&lt;=5) <span class="keywordflow">Then</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">If</span> (srt&gt;(etam+arho)) rpre = <a class="code" href="rptore_8f90.html#a5a20c71d3d3a122035a778e747c3d26f">rptore</a>(srt)</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (lb2&gt;=25 .And. lb2&lt;=27 .And. lb1&gt;=3 .And. lb1&lt;=5) <span class="keywordflow">Then</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">If</span> (srt&gt;(etam+arho)) rpre = <a class="code" href="rptore_8f90.html#a5a20c71d3d3a122035a778e747c3d26f">rptore</a>(srt)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (lb1&gt;=25 .And. lb1&lt;=27 .And. lb2==0) <span class="keywordflow">Then</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">If</span> (srt&gt;(pimass+arho)) rpre = <a class="code" href="retorp_8f90.html#a73bbd7074951379c1e722c2c38ef2bba">retorp</a>(srt)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">Else</span> <span class="keywordflow">If</span> (lb2&gt;=25 .And. lb2&lt;=27 .And. lb1==0) <span class="keywordflow">Then</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">If</span> (srt&gt;(pimass+arho)) rpre = <a class="code" href="retorp_8f90.html#a73bbd7074951379c1e722c2c38ef2bba">retorp</a>(srt)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="srpre_8f90.html#aa6d8bed16c3c5865e6897a067bd6c61a">srpre</a></div><div class="ttc" id="rptore_8f90_html_a5a20c71d3d3a122035a778e747c3d26f"><div class="ttname"><a href="rptore_8f90.html#a5a20c71d3d3a122035a778e747c3d26f">rptore</a></div><div class="ttdeci">real function rptore(srt)</div><div class="ttdef"><b>Definition:</b> <a href="rptore_8f90_source.html#l00002">rptore.f90:2</a></div></div>
+<div class="ttc" id="retorp_8f90_html_a73bbd7074951379c1e722c2c38ef2bba"><div class="ttname"><a href="retorp_8f90.html#a73bbd7074951379c1e722c2c38ef2bba">retorp</a></div><div class="ttdeci">real function retorp(srt)</div><div class="ttdef"><b>Definition:</b> <a href="retorp_8f90_source.html#l00002">retorp.f90:2</a></div></div>
+<div class="ttc" id="srpre_8f90_html_aa6d8bed16c3c5865e6897a067bd6c61a"><div class="ttname"><a href="srpre_8f90.html#aa6d8bed16c3c5865e6897a067bd6c61a">srpre</a></div><div class="ttdeci">subroutine srpre(lb1, lb2, srt)</div><div class="ttdef"><b>Definition:</b> <a href="srpre_8f90_source.html#l00002">srpre.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

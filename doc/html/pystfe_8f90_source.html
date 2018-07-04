@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AMPT: src/pystfe.f90 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AMPT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pystfe.f90</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pystfe_8f90.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">Subroutine </span><a class="code" href="pystfe_8f90.html#a1cbfd2424f16fcd6b31776c29e2dcee7">pystfe</a>(kf, x, q2, xpq)</div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="pystfe_8f90.html#a1cbfd2424f16fcd6b31776c29e2dcee7">    2</a></span>&#160;  <span class="keyword">Common</span> /ludat1/mstu(200), paru(200), mstj(200), parj(200)</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keywordtype">Save</span> /ludat1/</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  <span class="keyword">Common</span> /ludat2/kchg(500, 3), pmas(500, 4), parf(2000), vckm(4, 4)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keywordtype">Save</span> /ludat2/</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">Common</span> /pypars/mstp(200), parp(200), msti(200), pari(200)</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordtype">Save</span> /pypars/</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  dimension xpq(-6:6), xfdflm(9)</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordtype">Character</span> chdflm(9)*5, header*40</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">Data</span> chdflm/<span class="stringliteral">&#39;UPVAL&#39;</span>, <span class="stringliteral">&#39;DOVAL&#39;</span>, <span class="stringliteral">&#39;GLUON&#39;</span>, <span class="stringliteral">&#39;QBAR &#39;</span>, <span class="stringliteral">&#39;UBAR &#39;</span>, <span class="stringliteral">&#39;SBAR &#39;</span>, <span class="stringliteral">&#39;CBAR &#39;</span>, <span class="stringliteral">&#39;BBAR &#39;</span>, <span class="stringliteral">&#39;TBAR &#39;</span>/</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">Data</span> header/<span class="stringliteral">&#39;Tung evolution package has been invoked&#39;</span>/</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">Data</span> <a class="code" href="init_8f90.html#a925211caea512f352d748dcedd82d0ff">init</a>/0/</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">If</span> (mstp(51)&gt;=11 .And. mstp(51)&lt;=13 .And. mstp(52)&lt;=1) <span class="keywordflow">Then</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    xdflm = max(0.51e-4, x)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    q2dflm = max(10., min(1e8,q2))</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">If</span> (mstp(52)==0) q2dflm = 10.</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">Do</span> j = 1, 9</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <span class="keywordflow">If</span> (mstp(52)==1 .And. j==9) <span class="keywordflow">Then</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        q2dflm = q2dflm*(40./pmas(6,1))**2</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        q2dflm = max(10., min(1e8,q2))</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordflow">      End If</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      xfdflm(j) = 0.</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordflow">    End Do</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">If</span> (x&lt;0.51e-4 .And. abs(parp(51)-1.)&gt;0.01) <span class="keywordflow">Then</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      cxs = (0.51e-4/x)**(parp(51)-1.)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordflow">Do</span> j = 1, 7</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        xfdflm(j) = xfdflm(j)*cxs</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordflow">      End Do</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordflow">    End If</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    xpq(0) = xfdflm(3)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    xpq(1) = xfdflm(2) + xfdflm(5)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    xpq(2) = xfdflm(1) + xfdflm(5)</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    xpq(3) = xfdflm(6)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    xpq(4) = xfdflm(7)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    xpq(5) = xfdflm(8)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    xpq(6) = xfdflm(9)</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    xpq(-1) = xfdflm(5)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    xpq(-2) = xfdflm(5)</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    xpq(-3) = xfdflm(6)</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    xpq(-4) = xfdflm(7)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    xpq(-5) = xfdflm(8)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    xpq(-6) = xfdflm(9)</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">Else</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">If</span> (<a class="code" href="init_8f90.html#a925211caea512f352d748dcedd82d0ff">init</a>==0) <span class="keywordflow">Then</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      i1 = 0</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">If</span> (mstp(52)==4) i1 = 1</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      ihdrn = 1</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      nu = mstp(53)</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      i2 = mstp(51)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">If</span> (mstp(51)&gt;=11) i2 = mstp(51) - 3</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      i3 = 0</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">If</span> (mstp(52)==3) i3 = 1</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      alam = 0.75*parp(1)</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      tpms = pmas(6, 1)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      qini = parp(52)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      qmax = parp(53)</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      xmin = parp(54)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="init_8f90.html#a925211caea512f352d748dcedd82d0ff">init</a> = 1</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordflow">    End If</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    q = sqrt(q2)</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">Do</span> i = -6, 6</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      fixq = 0.</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      xpq(i) = x*fixq</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordflow">    End Do</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    xps = xpq(1)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    xpq(1) = xpq(2)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    xpq(2) = xps</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    xps = xpq(-1)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    xpq(-1) = xpq(-2)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    xpq(-2) = xps</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordflow">  End If</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">Return</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">End Subroutine </span><a class="code" href="pystfe_8f90.html#a1cbfd2424f16fcd6b31776c29e2dcee7">pystfe</a></div><div class="ttc" id="pystfe_8f90_html_a1cbfd2424f16fcd6b31776c29e2dcee7"><div class="ttname"><a href="pystfe_8f90.html#a1cbfd2424f16fcd6b31776c29e2dcee7">pystfe</a></div><div class="ttdeci">subroutine pystfe(kf, x, q2, xpq)</div><div class="ttdef"><b>Definition:</b> <a href="pystfe_8f90_source.html#l00002">pystfe.f90:2</a></div></div>
+<div class="ttc" id="init_8f90_html_a925211caea512f352d748dcedd82d0ff"><div class="ttname"><a href="init_8f90.html#a925211caea512f352d748dcedd82d0ff">init</a></div><div class="ttdeci">subroutine init(minnum, maxnum, num, radius, x0, z0, p0, gamma, iseed, mass, iopt)</div><div class="ttdef"><b>Definition:</b> <a href="init_8f90_source.html#l00002">init.f90:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
