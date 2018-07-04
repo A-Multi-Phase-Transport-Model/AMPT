@@ -1,3 +1,5 @@
+!> @brief
+!!       初始化整个事件的设定(一些读进去的事件设定参数)
 Subroutine hijset(efrm, frame, proj, targ, iap, izp, iat, izt)
   Character frame*4, proj*4, targ*4, eframe*4
   Double Precision dd1, dd2, dd3, dd4
